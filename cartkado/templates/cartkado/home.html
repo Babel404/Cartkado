@@ -1,0 +1,9 @@
+{% extends 'cartkado/base.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+	<p> Hey {{user.username}} !</p>
+	<p> You can <a href='/logout'>logout here</a></p>
+{% else %}
+	<p> You can <a href='/login'>login here</a></p>	
+{% endif %}
+{% endblock %}

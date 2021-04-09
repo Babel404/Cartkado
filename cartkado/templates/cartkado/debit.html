@@ -1,0 +1,13 @@
+{% extends 'cartkado/base.html' %}
+
+{% block title %} Debit Giftcard {% endblock %}
+
+{% block content %}
+
+<form method="post" action="/debit/">
+	{% csrf_token %}
+	{{form.as_p}}
+	<button type="submit", name="save">Debit</button>
+</form>
+
+{% endblock %}

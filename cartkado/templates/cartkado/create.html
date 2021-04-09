@@ -1,0 +1,17 @@
+{% extends 'cartkado/base.html' %}
+
+{% block title %} Create New Giftcard {% endblock %}
+
+{% block content %}
+	{% if user.is_superuser %}
+		Here to give :)
+		<form method="post" action="/create/">
+			{% csrf_token %}
+			{{form.as_p}}
+			<button type="submit", name="save">Create New</button>
+		</form>
+	{% else %}
+		Sorry, you have to be an ethikdo administrator to create new giftcard
+	{% endif %}
+
+{% endblock %}
